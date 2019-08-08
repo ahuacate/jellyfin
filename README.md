@@ -14,8 +14,9 @@ Other Prerequisites are:
 - [x] Jellyfin LXC with Jellyfin SW installed as per [Jellyfin LXC - Ubuntu 16.04](https://github.com/ahuacate/proxmox-lxc/blob/master/README.md#40-jellyfin-lxc---ubuntu-1604).
 
 Tasks to be performed are:
-- [ ] Install PiHole LXC
-- [ ] Install OpenVPN Gateway LXC
+- [ ] 1.0 Setup Jellyfin and perform base configuration
+- [ ] 2.0 Jellyfin Common Settings
+- [ ] 3.0 Add media library to Jellyfin
 
 
 ## 1.0 Setup Jellyfin and perform base configuration
@@ -227,36 +228,104 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-### 5.4 Edit Jellyfin `Storm` User
-Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration Dashboard `Server` > `Users` > `storm` and set the values as follows:
+### 3.3 Add Music media library
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
+
+| `Library` > `Add Media Library` | Value | Notes
+| :---  | :---: | :---
+| **MUSIC**
+| Show advanced settings | `Enable` | 
+| Content type | `Music`
+| Display name | `Music`
+| **Folders**
+| LabelFolder | `/mnt/music` | *Browse to the movies folder*
+| (Optional) Shared network folder | `nfs://192.168.1.10/volume1/music`
+| **Library Settings**
+| Preferred download language | `English` | *Or select your preference*
+| Country | `United Kingdom` | *Or select your preference*
+| Enable real time monitoring | `☑`
+| MusicAlbum metadata downloaders
+| | `☑ MusicBrainz`
+| | `☑ TheAudioDB`
+| MusicArtist metadata downloaders
+| | `☑ MusicBrainz`
+| | `☑ TheAudioDB`
+| MusicVideo metadata downloaders
+| | `☐ TheMovieDb`
+| Automatically refresh metadata from the internet | `Every 90 days`
+| Metadata savers | `☐ Nfo`
+| **MusicAlbum Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Disc | `☐`
+| FanArt | `☑`
+| TheAudioDB | `☑`
+| **MusicArtist Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Art | `☑`
+| Banner | `☑`
+| Logo | `☑`
+| Maximum number of backdrops per item | `1`
+| Minimum backdrop download width | `1920`
+| FanArt | `☑`
+| TheAudioDB | `☑`
+| **Audio Image Fetchers**
+| Image Extractor | `☑`
+| **MusicVideo Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Art | `☑`
+| Banner | `☑`
+| Disc | `☑`
+| Logo | `☑`
+| Thumb | 
+| Maximum number of backdrops per item | `1`
+| Minimum backdrop download width | `1920`
+| TheMovieDb | `☐`
+| FanArt | `☑`
+| Screen Grabber | `☑`
+| Save artwork into media folders | `☑`
+| Download images in advance | `☑`
+| Automatically merge series that are spread across multiple folders | `☐`
+| Display missing episodes within seasons | `☐`
+| **Chapter Images**
+| Enable chapter image extraction | `☐`
+| Extract chapter images during the library scan | `☐`
+
+And click `Save`.
+
+## 4.0 Edit Jellyfin `Storm` User
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `storm` and set the values as follows:
 
 | `Server` > `Users` > `storm` > `Profile Tab` | Value | Notes
 | :---  | :---: | :---
 | Name | `storm`
-| Allow remote connections to this Jellyfin Server | `☑ Enabled` |
-| Allow this user to manage the server | `☑ Enabled`
+| Allow remote connections to this Jellyfin Server | `☑` |
+| Allow this user to manage the server | `☑`
 | **Feature Access**
-| Allow Live TV access | `☑ Enabled`
-| Allow Live TV recording management | `☑ Enabled`
+| Allow Live TV access | `☑`
+| Allow Live TV recording management | `☑`
 | **Media Playback**
-| Allow media playback | `☑ Enabled`
-| Allow audio playback that requires transcoding | `☑ Enabled`
-| Allow video playback that requires transcoding | `☑ Enabled`
-| Allow video playback that requires conversion without re-encoding | `☑ Enabled`
+| Allow media playback | `☑`
+| Allow audio playback that requires transcoding | `☑`
+| Allow video playback that requires transcoding | `☑`
+| Allow video playback that requires conversion without re-encoding | `☑`
 | Internet streaming bitrate limit (Mbps) | Leave blank
 | **Allow Media Deletion From**
-| All libraries | `☑ Enabled`
+| All libraries | `☑`
 | **Remote Control**
-| Allow remote control of other users | `☑ Enabled`
-| Allow remote control of shared devices | `☑ Enabled`
+| Allow remote control of other users | `☑`
+| Allow remote control of shared devices | `☑`
 | **Download & Sync**
 | Allow media downloading and syncing | `☐`
 | Allow media downloading and syncing that requires transcoding | `☐`
 | Allow media conversion | `☐`
 | Allow social media sharing | `☐` | *Allways disable for all users*
 | Disable this user | `☐`
-| Hide this user from login screens | `☑ Enabled`
+| Hide this user from login screens | `☑` | *Do it*
 | Failed login attempts before user is locked out | `0`
-| **`Server` > `Users` > `storm` > `Password`**
-| New Password | Random 16 character password | * You probably set this on installation. If not, ise a Random 16 character password ONLY i.e cA(8&KxjLHz8s4?A*
+| **`Server` > `Users` > `storm` > `Password`** | | *Always click `Save` bewteen tabs*
+| New Password | Random 16 character password | * You probably set this on installation. If not, use a Random 16 character password ONLY i.e cA(8&KxjLHz8s4?A*
 | New password confirm | Random 16 character password
+| Now click `Save`
+| Easy Pin Code | Leave Blank
+| Enable in-network sign in with my easy pin code | `☐`
+
