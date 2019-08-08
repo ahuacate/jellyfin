@@ -16,7 +16,8 @@ Other Prerequisites are:
 Tasks to be performed are:
 - [ ] 1.0 Setup Jellyfin and perform base configuration
 - [ ] 2.0 Jellyfin Common Settings
-- [ ] 3.0 Add media library to Jellyfin
+- [ ] 3.0 Add media to the Jellyfin Library
+- [ ] 4.0 Edit Jellyfin `Storm` User
 
 
 ## 1.0 Setup Jellyfin and perform base configuration
@@ -116,7 +117,7 @@ And click `Save`.
 
 And click `Save`.
 
-## 3.0 Add media library to Jellyfin
+## 3.0 Add media to the Jellyfin Library
 Jellyfin should have access to your NAS folder shares via your Proxmox hosts NFS mounts. You will add the following media libraries to Jellyfin:
 *  Movies
 *  TV Shows
@@ -318,14 +319,60 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Allow media downloading and syncing | `☐`
 | Allow media downloading and syncing that requires transcoding | `☐`
 | Allow media conversion | `☐`
-| Allow social media sharing | `☐` | *Allways disable for all users*
+| Allow social media sharing | `☐` | *Always disable for all users.*
 | Disable this user | `☐`
-| Hide this user from login screens | `☑` | *Do it*
+| Hide this user from login screens | `☑` | *Do it.*
 | Failed login attempts before user is locked out | `0`
-| **`Server` > `Users` > `storm` > `Password`** | | *Always click `Save` bewteen tabs*
-| New Password | Random 16 character password | * You probably set this on installation. If not, use a Random 16 character password ONLY i.e cA(8&KxjLHz8s4?A*
+| **`Server` > `Users` > `storm` > `Password`** | | *Always click `Save` between tabs.*
+| New Password | Random 16 character password | *You probably set this on installation. If not, use a Random 16 character password ONLY i.e cA(8&KxjLHz8s4?A.*
 | New password confirm | Random 16 character password
 | Now click `Save`
 | Easy Pin Code | Leave Blank
 | Enable in-network sign in with my easy pin code | `☐`
 
+## 5.0 Create Jellyfin Remote Access User
+You can create individual users specifically for remote access for use on smartphones, tablets or notebook. These remote access users will have their media transcoded to a preset bit rate.
+
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
+
+| `Server` > `Users` > `newuser` > `Profile Tab` | Value | Notes
+| :---  | :---: | :---
+| Name | `newuser`
+| Authentication Provider | `Default`
+| Allow remote connections to this Jellyfin Server | `☑` |
+| Allow this user to manage the server | `☐` | *Not recommended for any remopte users.*
+| **Feature Access**
+| Allow Live TV access | `☑`
+| Allow Live TV recording management | `☑`
+| **Media Playback**
+| Allow media playback | `☑`
+| Allow audio playback that requires transcoding | `☑`
+| Allow video playback that requires transcoding | `☑`
+| Allow video playback that requires conversion without re-encoding | `☑`
+| Internet streaming bitrate limit (Mbps) | `5` | *Ample for smartphones. But value is dependent on your internet upload bandwidth.*
+| **Allow Media Deletion From** | | *If you dont want your users wiping your content best disable this feature.*
+| All libraries | `☐`
+| Movies | `☐`
+| Music | `☐`
+| TV Shows | `☐`
+| **Remote Control**
+| Allow remote control of other users | `☐`
+| Allow remote control of shared devices | `☐`
+| **Download & Sync**
+| Allow media downloading and syncing | `☐` | *Best disable otherwise users will be downloading full size Gb content.*
+| Allow media downloading and syncing that requires transcoding | `☐`
+| Allow media conversion | `☐`
+| Allow social media sharing | `☐` | *Always disable for all users.*
+| Disable this user | `☐`
+| Hide this user from login screens | `☑` | *Do it*
+| Failed login attempts before user is locked out | `0`
+| **`Server` > `Users` > `newuser` > `Acesss`** | | *Always click `Save` between tabs.*
+| **Library Access**
+| Enable access to all libraries | `☑` | *By disabling you can individually select libraries from a list.*
+| Enable access from all devices |  `☑` | *By disabling you can individually select by username what devices they can connect with. This only applies to devices that can be uniquely identified and will not prevent browser access. Filtering user device access will prevent them from using new devices until they've been approved here.*
+| **`Server` > `Users` > `newuser` > `Password`** | | *Always click `Save` between tabs*
+| New Password | Random 16 character password | * Always use a Random 16 character password ONLY i.e cA(8&KxjLHz8s4?A. Best use a password generator or management SW*
+| New password confirm | Random 16 character password
+| Now click `Save`
+| Easy Pin Code | Leave Blank
+| Enable in-network sign in with my easy pin code | `☐`
