@@ -18,7 +18,8 @@ Tasks to be performed are:
 - [ ] 2.0 Jellyfin Common Settings
 - [ ] 3.0 Add media to the Jellyfin Library
 - [ ] 4.0 Edit Jellyfin `Storm` User
-
+- [ ] 5.0 Create Jellyfin Remote Access Users
+- [ ] 6.0 Create Jellyfin Media Player Users
 
 ## 1.0 Setup Jellyfin and perform base configuration
 In your web browser type `http://192.168.50.111:8096` and a Jellyfin configuration wizard should show. 
@@ -45,15 +46,23 @@ A configuration wizard will ask you to enter some basic details.
 And Click `Finish`. Now login with username `storm`.
 
 ## 2.0 Jellyfin Common Settings
-Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration Dashboard, by clicking on the 4 square tiles in the top right of your screen,  `Server` > `Select your Section` and set the values as follows, remembering to click `Save` at each section:
+Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration Dashboard, by clicking on the 4 square tiles in the top right of your screen,  `Server` > `Select your Section` and set the values as follows, remembering to click `Save` at each completed section:
 
 | Server | Value | Notes
 | :---  | :---: | :---
 | **`General`**
 | Server name | `jellyfin-site1` | *`site1` refers to your the servers location i.e your home, beach house, office*
-| Other settings | Leave all as default
+| Preferred display language | `English (United Kingdom)`
+| **Paths**
+| Cache path | `/var/cache/jellyfin`
+| Metadata path | `/var/lib/jellyfin/metadata`
+| ** Automatic Updates**
+| Allow the server to restart automatically to apply updates | `☑`
+| **Branding**
+| Login Disclaimer | Leave Blank
+| Custom css | Leave Blank
 | **`Users`**
-| See below section [here]
+| See below section [here](
 | **`Library` > `Display`**
 | Display a folder view to show plain media folders | `☐` | *Uncheck*
 | Display specials within seasons they aired in | `☑` |  *Check*
