@@ -352,7 +352,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 | `Server` > `Users` > `newuser` > `Profile Tab` | Value | Notes
 | :---  | :---: | :---
-| Name | `newuser` | *User first name or nickname*
+| Name | `newuser` | *User first name or nickname. Hint, the Jellyfin android App capitalises the first character when typing in the username field*
 | Authentication Provider | `Default`
 | Allow remote connections to this Jellyfin Server | `☑` |
 | Allow this user to manage the server | `☐` | *Not recommended for remote general users.*
