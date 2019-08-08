@@ -62,7 +62,7 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Login Disclaimer | Leave Blank
 | Custom css | Leave Blank
 | **`Users`**
-| See below section [here](
+| See below section [here](https://github.com/ahuacate/jellyfin/blob/master/README.md#40-edit-jellyfin-storm-user)
 | **`Library` > `Display`**
 | Display a folder view to show plain media folders | `☐` | *Uncheck*
 | Display specials within seasons they aired in | `☑` |  *Check*
@@ -345,6 +345,8 @@ And click `Save`.
 You can create individual users specifically for remote access for use on smartphones, tablets and notebook. These remote access users will have their media transcoded to a preset bit rate. The only issue is 4K HDR - the GPU cannot transcode 4K.
 
 There is a Jellyfin App available for Android devices on the Google Play Store.
+
+This recipe uses a HAProxy reverse proxy and this recipe is [HERE](https://github.com/ahuacate/proxmox-reverseproxy/blob/master/README.md#haproxy-in-pfsense).
 
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
 
