@@ -330,17 +330,21 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Easy Pin Code | Leave Blank
 | Enable in-network sign in with my easy pin code | `☐`
 
-## 5.0 Create Jellyfin Remote Access User
-You can create individual users specifically for remote access for use on smartphones, tablets or notebook. These remote access users will have their media transcoded to a preset bit rate.
+And click `Save`.
+
+## 5.0 Create Jellyfin Remote Access Users
+You can create individual users specifically for remote access for use on smartphones, tablets and notebook. These remote access users will have their media transcoded to a preset bit rate. The only issue is 4K HDR - the GPU cannot transcode 4K.
+
+There is a Jellyfin App available for Android devices on the Google Play Store.
 
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
 
 | `Server` > `Users` > `newuser` > `Profile Tab` | Value | Notes
 | :---  | :---: | :---
-| Name | `newuser`
+| Name | `newuser` | *User first name or nickname*
 | Authentication Provider | `Default`
 | Allow remote connections to this Jellyfin Server | `☑` |
-| Allow this user to manage the server | `☐` | *Not recommended for any remopte users.*
+| Allow this user to manage the server | `☐` | *Not recommended for remote general users.*
 | **Feature Access**
 | Allow Live TV access | `☑`
 | Allow Live TV recording management | `☑`
@@ -376,3 +380,56 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Now click `Save`
 | Easy Pin Code | Leave Blank
 | Enable in-network sign in with my easy pin code | `☐`
+
+And click `Save`.
+
+## 6.0 Create Jellyfin Media Player Users
+Here we create LAN users accounts for Kodi media player devices. Transcoding will be disabled so full bandwidth media (i.e 4K HDR) will be streamed to each device.
+
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
+
+| `Server` > `Users` > `newuser` > `Profile Tab` | Value | Notes
+| :---  | :---: | :---
+| Name | `lounge-01` | *I use lounge-01, lounge-02, bedroom-01, kitchen-01, mancave-01 etc*
+| Authentication Provider | `Default`
+| Allow remote connections to this Jellyfin Server | `☐` |
+| Allow this user to manage the server | `☐` | *Not recommended for remote general users.*
+| **Feature Access**
+| Allow Live TV access | `☑`
+| Allow Live TV recording management | `☑`
+| **Media Playback**
+| Allow media playback | `☑`
+| Allow audio playback that requires transcoding | `☑`
+| Allow video playback that requires transcoding | `☑`
+| Allow video playback that requires conversion without re-encoding | `☑`
+| Internet streaming bitrate limit (Mbps) | Leave Blank | 
+| **Allow Media Deletion From** | | *I only enable Movies*
+| All libraries | `☐`
+| Movies | `☑`
+| Music | `☐`
+| TV Shows | `☐`
+| **Remote Control**
+| Allow remote control of other users | `☐`
+| Allow remote control of shared devices | `☐`
+| **Download & Sync**
+| Allow media downloading and syncing | `☐` | *Best disable otherwise users will be downloading full size Gb content.*
+| Allow media downloading and syncing that requires transcoding | `☐`
+| Allow media conversion | `☐`
+| Allow social media sharing | `☐` | *Always disable for all users.*
+| Disable this user | `☐`
+| Hide this user from login screens | `☐` | *Disabled. Easier for remote control configuration*
+| Failed login attempts before user is locked out | `0`
+| **`Server` > `Users` > `newuser` > `Acesss`** | | *Always click `Save` between tabs.*
+| **Library Access**
+| Enable access to all libraries | `☑` | *By disabling you can individually select libraries from a list.*
+| Enable access from all devices |  `☑` | *By disabling you can individually select by username what devices they can connect with. This only applies to devices that can be uniquely identified and will not prevent browser access. Filtering user device access will prevent them from using new devices until they've been approved here.*
+| **`Server` > `Users` > `newuser` > `Password`** | | *Always click `Save` between tabs*
+| New Password | Here I use a common pwd like a WiFi pwd | * Not so critical as this account is acessible by LAN only*
+| New password confirm | Retype password
+| Now click `Save`
+| Easy Pin Code | Leave Blank
+| Enable in-network sign in with my easy pin code | `☐`
+
+And click `Save`.
+
+
