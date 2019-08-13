@@ -396,7 +396,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 And click `Save`.
 
 ## 6.0 Create Jellyfin Media Player Users
-Here we create LAN users accounts for Kodi media player devices. Transcoding will be disabled so full bandwidth media (i.e 4K HDR) will be streamed to each device.
+Here we create LAN users accounts for Kodi media player devices. Transcoding will be disabled so full bandwidth media (i.e 4K HDR) will be streamed directly via NFS to each device.
 
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
 
