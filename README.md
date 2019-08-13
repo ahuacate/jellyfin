@@ -52,7 +52,7 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Server | Value | Notes
 | :---  | :---: | :---
 | **`General`**
-| Server name | `jellyfin-site1` | *`site1` refers to your the servers location i.e your home, beach house, office*
+| Server name | `jellyfin` | *`site1` refers to your the servers location i.e your home, beach house, office*
 | Preferred display language | `English (United Kingdom)`
 | **Paths**
 | Cache path | `/var/cache/jellyfin`
