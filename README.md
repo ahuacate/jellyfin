@@ -454,5 +454,5 @@ Fix was reinstalling VAINFO on the Proxmox Host.
 ```
 apt remove vainfo -y &&
 apt autoremove vainfo -y &&
-apt install -y
+apt install vainfo -y
 ```
