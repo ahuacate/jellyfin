@@ -20,6 +20,7 @@ Tasks to be performed are:
 - [ ] 4.0 Edit Jellyfin `Storm` User
 - [ ] 5.0 Create Jellyfin Remote Access Users
 - [ ] 6.0 Create Jellyfin Media Player Users
+- [ ] 00.00 Patches & Fixes
 
 ## 1.0 Setup Jellyfin and perform base configuration
 In your web browser type `http://192.168.50.111:8096` and a Jellyfin configuration wizard should show. 
@@ -443,4 +444,15 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
+#  00.00 Patches & Fixes
+Tweaks and fixes to make broken things work - sometimes.
 
+## 00.01 VAAPI Error
+FFMPEG errors started for no known reason. Android Jellyfin client APP reported **Playback Error - No Compatible Streams**.
+Fix was reinstalling VAINFO on the Proxmox Host.
+
+```
+apt remove vainfo -y &&
+apt autoremove vainfo -y &&
+apt install -y
+```
