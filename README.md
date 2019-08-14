@@ -448,8 +448,8 @@ And click `Save`.
 Tweaks and fixes to make broken things work - sometimes.
 
 ## 00.01 VAAPI Error
-FFMPEG errors started for no known reason. Android Jellyfin client APP reported **Playback Error - No Compatible Streams**.
-Fix was reinstalling VAINFO on the Proxmox Host.
+If you get an playback error on your Android Jellyfin device APP reporting **Playback Error - No Compatible Streams**. This error seems to be a FFMPEG permission issue with folder /dev/dri/renderD128. Basically all transcodes fail.
+Fix was chmod 666 /dev/dri/renderD128 on the Proxmox host. But on rebooting a Proxmox host the /dev/dri/* permissions changed back to default. So best to create a rc.local script as shown [HERE](/dev/dri/renderD128). If that fails try reinstalling VAINFO on the Proxmox Host.
 
 ```
 apt remove vainfo -y &&
