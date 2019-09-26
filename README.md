@@ -22,10 +22,10 @@ Tasks to be performed are:
 - [ ] 6.0 Create Jellyfin Media Player Users
 - [ ] 00.00 Patches & Fixes
 
-## 1.0 Setup Jellyfin and perform base configuration
+## 1.00 Setup Jellyfin and perform base configuration
 In your web browser type `http://192.168.50.111:8096` and a Jellyfin configuration wizard should show. 
 
-### 1.1 Jellyfin base settings
+### 1.01 Jellyfin base settings
 A configuration wizard will ask you to enter some basic details.
 
 | Jellyfin Base Wizard | Value | Notes
@@ -46,8 +46,10 @@ A configuration wizard will ask you to enter some basic details.
 
 And Click `Finish`. Now login with username `storm`.
 
-## 2.0 Jellyfin Common Settings
+## 2.00 Jellyfin Common Settings
 Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration Dashboard, by clicking on the 4 square tiles in the top right of your screen,  `Server` > `Select your Section` and set the values as follows, remembering to click `Save` at each completed section:
+
+### 2.01 Server Section
 
 | Server | Value | Notes
 | :---  | :---: | :---
@@ -96,6 +98,8 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 
 And click `Save`.
 
+### 2.02 Devices Section
+
 | Devices | Value | Notes
 | :---  | :---: | :---
 | **`DLNA` > `Settings`**
@@ -105,6 +109,12 @@ And click `Save`.
 | Blast alive messages | `☐` | *Uncheck*
 
 And click `Save`.
+
+### 2.03 Live TV Section
+Coming soon.
+
+### 2.04 Expert Section
+First complete the `Hosting Tab` inputs.
 
 | Expert | Value | Notes
 | :---  | :---: | :---
@@ -127,13 +137,24 @@ And click `Save`.
 
 And click `Save`.
 
-## 3.0 Add media to the Jellyfin Library
+Now complete the `Security Tab` inputs. Create the following API keys.
+
+| Expert | Value | Notes
+| :---  | :---: | :---
+| **`Advanced` > `Security`**
+| **Api Keys +**
+| Radarr | example.2c42baaf1a154181bd5cc5704afd08a9 | *Note this key ID. Its needed in Radarr Connections Settings*
+| Sonarr | example.2c42baaf1a154181bd5cc5704afd08a9 | *Note this key ID. Its needed in Sonarr Connections Settings*
+
+## 3.00 Add media to the Jellyfin Library
 Jellyfin should have access to your NAS folder shares via your Proxmox hosts NFS mounts. You will add the following media libraries to Jellyfin:
 *  Movies
 *  TV Shows
 *  Music
+*  Documentary/series
+*  Documentary/movies
 
-### 3.1 Add Movies media library
+### 3.01 Add Movies media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
 
 | `Library` > `Add Media Library` | Value | Notes
@@ -176,7 +197,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-### 3.2 Add TV Shows media library
+### 3.02 Add TV Shows media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
 
 | `Library` > `Add Media Library` | Value | Notes
@@ -239,7 +260,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-### 3.3 Add Music media library
+### 3.03 Add Music media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
 
 | `Library` > `Add Media Library` | Value | Notes
@@ -303,7 +324,113 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-## 4.0 Edit Jellyfin `Storm` User
+### 3.04 Add Documentary Series media library
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
+
+| `Library` > `Add Media Library` | Value | Notes
+| :---  | :---: | :---
+| **Documentary Series**
+| Show advanced settings | `Enable` | 
+| Content type | `TV Shows`
+| Display name | `Documentary Series`
+| **Folders**
+| LabelFolder | `/mnt/video/documentary/series` | 
+| (Optional) Shared network folder | `nfs://192.168.1.10/volume1/video/documentary/series`
+| **Library Settings**
+| Preferred download language | `English` | *Or select your preference*
+| Country | `United Kingdom` | *Or select your preference*
+| Prefer embedded titles over filenames | `☐` 
+| Enable real time monitoring | `☑`
+| Series metadata downloaders
+| | `☑ TheTVDB`
+| | `☑ TheMovieDB`
+| | `☐ The Open Movie Database`
+| Season metadata downloaders
+| | `☐ TheMovieDB`
+| Episode metadata downloaders
+| | `☑ TheTVDB`
+| | `☐ TheMovieDB`
+| | `☐ The Open Movie Database`
+| Automatically refresh metadata from the internet | `Every 90 days`
+| Metadata savers | `☐ Nfo`
+| **Series Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Art | `☑`
+| Banner | `☑`
+| Logo | `☑`
+| Thumb | `☑`
+| Maximum number of backdrops per item | `1`
+| Minimum backdrop download width | `1920`
+| TheTVDB | `☑`
+| FanArt | `☑`
+| TheMovieDb | `☐`
+| **Season Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Banner | `☑`
+| Thumb | `☑`
+| Maximum number of backdrops per item | `0`
+| Minimum backdrop download width | `1920`
+| TheTVDB | `☑`
+| FanArt | `☐`
+| **Episode Image Fetchers**
+| TheTVDB | `☑`
+| TheMovieDb | `☐`
+| The Open Movie Database | `☐`
+| Screen Grabber | `☐`
+| Save artwork into media folders | `☑`
+| Download images in advance | `☑`
+| Automatically merge series that are spread across multiple folders | `☐`
+| Display missing episodes within seasons | `☐`
+| **Chapter Images**
+| Enable chapter image extraction | `☐`
+| Extract chapter images during the library scan | `☐`
+
+And click `Save`.
+
+### 3.05 Add Documentary Movies media library
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
+
+| `Library` > `Add Media Library` | Value | Notes
+| :---  | :---: | :---
+| **Documentary Movies**
+| Show advanced settings | `Enable` | 
+| Content type | `Movies`
+| Display name | `Documentary Movies`
+| **Folders**
+| LabelFolder | `/mnt/video/documentary/movies` | *Browse to the movies folder*
+| (Optional) Shared network folder | `nfs://192.168.1.10/volume1/video/documentary/movies`
+| **Library Settings**
+| Preferred download language | `English` | *Or select your preference*
+| Country | `United Kingdom` | *Or select your preference*
+| Prefer embedded titles over filenames | `☐` 
+| Enable real time monitoring | `☑`
+| Movie metadata downloaders
+| | `☑ TheMovieDb`
+| | `☑ The Open Movie Database`
+| Automatically refresh metadata from the internet | `Every 90 days`
+| Metadata savers | `☐ Nfo`
+| **Movie Image Fetchers > `Fetcher Settings`**
+| Primary | `☑`
+| Art | `☑`
+| Banner | `☑`
+| Disc | `☐`
+| Logo | `☐`
+| Thumb | `☑`
+| Maximum number of backdrops per item | `1`
+| Minimum backdrop download width | `1920`
+| TheMovieDb | `☑`
+| FanArt | `☑`
+| The Open Movie Database | `☐`
+| Screen Grabber | `☑`
+| Save artwork into media folders | `☑`
+| Download images in advance | `☑`
+| **Chapter Images**
+| Enable chapter image extraction | `☐`
+| Extract chapter images during the library scan | `☐`
+
+And click `Save`.
+
+## 4.00 Edit Jellyfin `Storm` User
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `storm` and set the values as follows:
 
 | `Server` > `Users` > `storm` > `Profile Tab` | Value | Notes
@@ -342,7 +469,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-## 5.0 Create Jellyfin Remote Access Users
+## 5.00 Create Jellyfin Remote Access Users
 You can create individual users specifically for remote access for use on smartphones, tablets and notebook. These remote access users will have their media transcoded to a preset bit rate. The only issue is 4K HDR - the GPU cannot transcode 4K.
 
 There is a Jellyfin App available for Android devices on the Google Play Store.
@@ -395,7 +522,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
-## 6.0 Create Jellyfin Media Player Users
+## 6.00 Create Jellyfin Media Player Users
 Here we create LAN users accounts for Kodi media player devices. Transcoding will be disabled so full bandwidth media (i.e 4K HDR) will be streamed directly via NFS to each device.
 
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `**+**` and set the values as follows:
@@ -443,6 +570,8 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Enable in-network sign in with my easy pin code | `☐`
 
 And click `Save`.
+
+---
 
 #  00.00 Patches & Fixes
 Tweaks and fixes to make broken things work - sometimes.
