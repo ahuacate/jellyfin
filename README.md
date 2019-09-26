@@ -145,6 +145,7 @@ Now complete the `Security Tab` inputs. Create the following API keys.
 | **Api Keys +**
 | Radarr | example.2c42baaf1a154181bd5cc5704afd08a9 | *Note this key ID. Its needed in Radarr Connections Settings*
 | Sonarr | example.2c42baaf1a154181bd5cc5704afd08a9 | *Note this key ID. Its needed in Sonarr Connections Settings*
+| Lidarr | example.2c42baaf1a154181bd5cc5704afd08a9 | *Note this key ID. Its needed in Lidarr Connections Settings*
 
 ## 3.00 Add media to the Jellyfin Library
 Jellyfin should have access to your NAS folder shares via your Proxmox hosts NFS mounts. You will add the following media libraries to Jellyfin:
