@@ -210,12 +210,13 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | **Library Settings**
 | Preferred download language | `English` | *Or select your preference*
 | Country | `United Kingdom` | *Or select your preference*
+| Specials season display name | Specials
 | Prefer embedded titles over filenames | `☐` 
 | Enable real time monitoring | `☑`
 | Series metadata downloaders
 | | `☑ TheTVDB`
-| | `☑ TheMovieDB`
-| | `☐ The Open Movie Database`
+| | `☐ TheMovieDB`
+| | `☑ The Open Movie Database`
 | Season metadata downloaders
 | | `☐ TheMovieDB`
 | Episode metadata downloaders
@@ -226,37 +227,31 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Metadata savers | `☐ Nfo`
 | **Series Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
-| Art | `☑`
 | Banner | `☑`
-| Logo | `☑`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `1`
 | Minimum backdrop download width | `1920`
-| TheTVDB | `☑`
-| FanArt | `☑`
-| TheMovieDb | `☐`
+| | `☑` TheTVDB
+| | `☐` TheMovieDB
 | **Season Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
 | Banner | `☑`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `0`
 | Minimum backdrop download width | `1920`
-| TheTVDB | `☑`
-| FanArt | `☐`
+| | `☑` TheTVDB
 | **Episode Image Fetchers**
-| TheTVDB | `☑`
-| TheMovieDb | `☐`
-| The Open Movie Database | `☐`
-| Screen Grabber | `☐`
+| | `☑` TheTVDB
+| | `☐` TheMovieDB
+| | `☐` The Open Movie Database
+| | `☑` Screen Grabber
 | Save artwork into media folders | `☑`
 | Download images in advance | `☑`
-| Automatically merge series that are spread across multiple folders | `☐`
+| Automatically merge series that are spread across multiple folders | `☑`
 | Display missing episodes within seasons | `☐`
 | **Chapter Images**
 | Enable chapter image extraction | `☐`
 | Extract chapter images during the library scan | `☐`
 
-And click `Save`.
+And click `Ok`.
 
 ### 3.03 Add Music media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
@@ -281,14 +276,12 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | | `☑ MusicBrainz`
 | | `☑ TheAudioDB`
 | MusicVideo metadata downloaders
-| | `☐ TheMovieDb`
+| | `☑ TheMovieDb`
 | Automatically refresh metadata from the internet | `Every 90 days`
 | Metadata savers | `☐ Nfo`
 | **MusicAlbum Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
 | Disc | `☐`
-| FanArt | `☑`
-| TheAudioDB | `☑`
 | **MusicArtist Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
 | Art | `☑`
@@ -296,21 +289,14 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Logo | `☑`
 | Maximum number of backdrops per item | `1`
 | Minimum backdrop download width | `1920`
-| FanArt | `☑`
 | TheAudioDB | `☑`
 | **Audio Image Fetchers**
 | Image Extractor | `☑`
 | **MusicVideo Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
-| Art | `☑`
-| Banner | `☑`
-| Disc | `☑`
-| Logo | `☑`
-| Thumb | 
 | Maximum number of backdrops per item | `1`
 | Minimum backdrop download width | `1920`
 | TheMovieDb | `☐`
-| FanArt | `☑`
 | Screen Grabber | `☑`
 | Save artwork into media folders | `☑`
 | Download images in advance | `☑`
@@ -320,7 +306,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Enable chapter image extraction | `☐`
 | Extract chapter images during the library scan | `☐`
 
-And click `Save`.
+And click `Ok`.
 
 ### 3.04 Add Documentary Series media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
@@ -337,44 +323,39 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | **Library Settings**
 | Preferred download language | `English` | *Or select your preference*
 | Country | `United Kingdom` | *Or select your preference*
+| Specials season display name | Specials
 | Prefer embedded titles over filenames | `☐` 
 | Enable real time monitoring | `☑`
 | Series metadata downloaders
 | | `☑ TheTVDB`
-| | `☑ TheMovieDB`
-| | `☐ The Open Movie Database`
+| | `☐ TheMovieDB`
+| | `☑ The Open Movie Database`
 | Season metadata downloaders
 | | `☐ TheMovieDB`
 | Episode metadata downloaders
 | | `☑ TheTVDB`
 | | `☐ TheMovieDB`
 | | `☐ The Open Movie Database`
-| Automatically refresh metadata from the internet | `Every 90 days`
+| Automatically refresh metadata from the internet | `Never`
 | Metadata savers | `☐ Nfo`
 | **Series Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
-| Art | `☑`
 | Banner | `☑`
-| Logo | `☑`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `1`
-| Minimum backdrop download width | `1920`
-| TheTVDB | `☑`
-| FanArt | `☑`
-| TheMovieDb | `☐`
+| Minimum backdrop download width | `1280`
+| | `☑` TheTVDB
+| | `☐` TheMovieDB
 | **Season Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
 | Banner | `☑`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `0`
-| Minimum backdrop download width | `1920`
-| TheTVDB | `☑`
-| FanArt | `☐`
+| Minimum backdrop download width | `1280`
+| | `☑` TheTVDB
 | **Episode Image Fetchers**
-| TheTVDB | `☑`
-| TheMovieDb | `☐`
-| The Open Movie Database | `☐`
-| Screen Grabber | `☐`
+| | `☑` TheTVDB
+| | `☐` TheMovieDB
+| | `☐` The Open Movie Database
+| | `☑` Screen Grabber
 | Save artwork into media folders | `☑`
 | Download images in advance | `☑`
 | Automatically merge series that are spread across multiple folders | `☐`
@@ -405,20 +386,14 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Movie metadata downloaders
 | | `☑ TheMovieDb`
 | | `☑ The Open Movie Database`
-| Automatically refresh metadata from the internet | `Every 90 days`
+| Automatically refresh metadata from the internet | `Never`
 | Metadata savers | `☐ Nfo`
 | **Movie Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
-| Art | `☑`
-| Banner | `☑`
-| Disc | `☐`
-| Logo | `☐`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `1`
-| Minimum backdrop download width | `1920`
+| Minimum backdrop download width | `1280`
 | TheMovieDb | `☑`
-| FanArt | `☑`
-| The Open Movie Database | `☐`
+| The Open Movie Database | `☑`
 | Screen Grabber | `☑`
 | Save artwork into media folders | `☑`
 | Download images in advance | `☑`
@@ -426,7 +401,32 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Enable chapter image extraction | `☐`
 | Extract chapter images during the library scan | `☐`
 
-And click `Save`.
+And click `Ok`.
+
+### 3.06 Add Public photo collection to the library
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
+
+| `Library` > `Add Media Library` | Value | Notes
+| :---  | :---: | :---
+| **Documentary Movies**
+| Show advanced settings | `Enable` | 
+| Content type | `Photos`
+| Display name | `Public Photos`
+| **Folders**
+| LabelFolder | `/mnt/photo/public` | *Browse to the movies folder*
+| (Optional) Shared network folder | `nfs://192.168.1.10/volume1/photo/public`
+| **Library Settings**
+| Enable photos | `☑`
+| Prefer embedded titles over filenames | `☐`
+| Enable real time monitoring | `☑`
+| **Metadata savers**
+| Nfo | `☐`
+| **Video Image Fetchers**
+| Screen Grabber | `☑`
+| Save artwork into media folders | `☐`
+| Download images in advance | `☑`
+
+And click `Ok`.
 
 ## 4.00 Edit Jellyfin `Storm` User
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Users` > `storm` and set the values as follows:
