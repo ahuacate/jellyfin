@@ -116,12 +116,11 @@ And click `Save`.
 ### 2.03 Live TV Section
 Coming soon.
 
-### 2.04 Expert Section
-First complete the `Hosting Tab` inputs.
+### 2.04 Advanced Section
 
-| Expert | Value | Notes
+| Advanced | Value | Notes
 | :---  | :---: | :---
-| **`Advanced` > `Hosting`**
+| **`Advanced` > `Networking`**
 | LAN networks | `192.168.50.0/24,192.168.1.0/24,192.168.2.0/28` | 
 | Bind to local network address | Leave blank
 | Local http port number | `8096` 
@@ -131,6 +130,7 @@ First complete the `Hosting Tab` inputs.
 | Remote IP address filter mode | `Whitelist`
 | Public http port number | `8096`
 | Public https port number | `8920`
+| Base URL | jellyfin
 | External domain | Leave blank
 | Custom ssl certificate path | Leave blank
 | Certificate password | Leave blank
