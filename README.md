@@ -66,7 +66,7 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Custom css | Leave Blank
 | **`Users`**
 | See below section [here](https://github.com/ahuacate/jellyfin/blob/master/README.md#40-edit-jellyfin-storm-user)
-| **`Library` > `Display
+| **`Library` > `Display`**
 | Date added behaviour for new content | `Use date scanned into the library`
 | Display a folder view to show plain media folders | `☐` | *Uncheck*
 | Display specials within seasons they aired in | `☑` |  *Check*
