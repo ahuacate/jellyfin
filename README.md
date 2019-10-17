@@ -66,7 +66,8 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Custom css | Leave Blank
 | **`Users`**
 | See below section [here](https://github.com/ahuacate/jellyfin/blob/master/README.md#40-edit-jellyfin-storm-user)
-| **`Library` > `Display`**
+| **`Library` > `Display
+| Date added behaviour for new content | `Use date scanned into the library`
 | Display a folder view to show plain media folders | `☐` | *Uncheck*
 | Display specials within seasons they aired in | `☑` |  *Check*
 | Group movies into collections | `☑` |  *Check*
@@ -80,8 +81,6 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Save image paths within nfo files | `☑`
 | Enable path substitution | `☑`
 | Copy extrafanart into extrathumbs | `☐`
-| **`Library` > `Advanced`**
-| Date added behaviour for new content | `Use date scanned into the library`
 | **`Playback` > `Streaming`** 
 | Internet streaming bitrate limit (Mbps) | `10` | *Up to you what this value is. But I recommend no more than 30% of your WAN upload speed.*
 | **`Transcoding`**
