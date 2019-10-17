@@ -81,9 +81,7 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Save image paths within nfo files | `☑`
 | Enable path substitution | `☑`
 | Copy extrafanart into extrathumbs | `☐`
-| **`Playback` > `Streaming`** 
-| Internet streaming bitrate limit (Mbps) | `10` | *Up to you what this value is. But I recommend no more than 30% of your WAN upload speed.*
-| **`Transcoding`**
+| **`Playback` > `Transcoding`**
 | Hardware acceleration | `Video Acceleration API (VA API)(experimental)` |
 | VA API Device | Leave as Default | *Should be /dev/dri/renderD128*
 | Enable hardware encoding | `☑`
@@ -94,6 +92,12 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | H264 encoding preset | `Auto`
 | H264 encoding CRF | `23`
 | Allow subtitle extraction on the fly | `☑`
+| **`Playback` > `Resume`**
+| Minimum resume percentage | 5
+| Maximum resume percentage | 90
+| Minimum resume duration | 300
+| **`Playback` > `Streaming`** 
+| Internet streaming bitrate limit (Mbps) | `10` | *Up to you what this value is. But I recommend no more than 30% of your WAN upload speed.*
 
 And click `Save`.
 
