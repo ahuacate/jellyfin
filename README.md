@@ -182,15 +182,9 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Metadata savers | `☐ Nfo`
 | **Movie Image Fetchers > `Fetcher Settings`**
 | Primary | `☑`
-| Art | `☑`
-| Banner | `☑`
-| Disc | `☐`
-| Logo | `☐`
-| Thumb | `☑`
 | Maximum number of backdrops per item | `1`
 | Minimum backdrop download width | `1920`
 | TheMovieDb | `☑`
-| FanArt | `☑`
 | The Open Movie Database | `☐`
 | Screen Grabber | `☑`
 | Save artwork into media folders | `☑`
@@ -199,7 +193,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Enable chapter image extraction | `☐`
 | Extract chapter images during the library scan | `☐`
 
-And click `Save`.
+And click `Ok`.
 
 ### 3.02 Add TV Shows media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
