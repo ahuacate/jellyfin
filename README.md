@@ -364,7 +364,7 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Enable chapter image extraction | `☐`
 | Extract chapter images during the library scan | `☐`
 
-And click `Save`.
+And click `Ok`.
 
 ### 3.05 Add Documentary Movies media library
 Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Library` > `Add Media Library` and set the values as follows:
