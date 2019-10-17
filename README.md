@@ -121,7 +121,7 @@ Coming soon.
 | Advanced | Value | Notes
 | :---  | :---: | :---
 | **`Advanced` > `Networking`**
-| LAN networks | `192.168.50.0/24,192.168.1.0/24,192.168.2.0/28` | 
+| LAN networks | `192.168.50.0/24,192.168.1.0/24` | 
 | Bind to local network address | Leave blank
 | Local http port number | `8096` 
 | Local https port number | `8920`
@@ -542,6 +542,8 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 | Internet streaming bitrate limit (Mbps) | Leave Blank | 
 | **Allow Media Deletion From** | | *I only enable Movies*
 | All libraries | `☐`
+| Documentary Movies | `☑`
+| Documentary Series | `☑`
 | Movies | `☑`
 | Music | `☐`
 | TV Shows | `☐`
