@@ -14,13 +14,28 @@ Other Prerequisites are:
 - [x] Jellyfin LXC with Jellyfin SW installed as per [Jellyfin LXC - Ubuntu 18.04](https://github.com/ahuacate/proxmox-lxc/blob/master/README.md#30-jellyfin-lxc---ubuntu-1804).
 
 Tasks to be performed are:
-- [ ] 1.0 Setup Jellyfin and perform base configuration
-- [ ] 2.0 Jellyfin Common Settings
-- [ ] 3.0 Add media to the Jellyfin Library
-- [ ] 4.0 Edit Jellyfin `Storm` User
-- [ ] 5.0 Create Jellyfin Remote Access Users
-- [ ] 6.0 Create Jellyfin Media Player Users
-- [ ] 00.00 Patches & Fixes
+- [1.00 Setup Jellyfin and perform base configuration](#100-setup-jellyfin-and-perform-base-configuration)
+	- [1.01 Jellyfin base settings](#101-jellyfin-base-settings)
+- [2.00 Jellyfin Common Settings](#200-jellyfin-common-settings)
+	- [2.01 Server Section](#201-server-section)
+	- [2.02 Devices Section](#202-devices-section)
+	- [2.03 Live TV Section](#203-live-tv-section)
+	- [2.04 Advanced Section](#204-advanced-section)
+- [3.00 Add media to the Jellyfin Library](#300-add-media-to-the-jellyfin-library)
+	- [3.01 Add Movies media library](#301-add-movies-media-library)
+	- [3.02 Add TV Shows media library](#302-add-tv-shows-media-library)
+	- [3.03 Add Music media library](#303-add-music-media-library)
+	- [3.04 Add Documentary Series media library](#304-add-documentary-series-media-library)
+	- [3.05 Add Documentary Movies media library](#305-add-documentary-movies-media-library)
+	- [3.06 Add Public photo collection to the library](#306-add-public-photo-collection-to-the-library)
+- [4.00 Edit Jellyfin `Storm` User](#400-edit-jellyfin-storm-user)
+- [5.00 Create Jellyfin Remote Access Users](#500-create-jellyfin-remote-access-users)
+- [6.00 Create Jellyfin Media Player Users](#600-create-jellyfin-media-player-users)
+- [00.00 Patches & Fixes](#0000-patches--fixes)
+	- [00.01 VAAPI Error](#0001-vaapi-error)
+	- [00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC](#0002-patch-for-odroid-n2-coreelec-connected-to-lg-c9-oled---coreelec)
+	- [00.03 Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC](#0003-patch-for-coreelec-keymapping-to-lg-c9-magic-remote-control---coreelec)
+
 
 ## 1.00 Setup Jellyfin and perform base configuration
 In your web browser type `http://192.168.50.111:8096` and a Jellyfin configuration wizard should show. 
