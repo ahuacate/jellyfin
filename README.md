@@ -612,6 +612,9 @@ systemctl start kodi
 ## 00.03 Patch for CoreELEC keymapping to LG C9 magic remote control
 My keymaps are as follows:
 
+![alt text](https://raw.githubusercontent.com/ahuacate/jellyfin/master/images/LG_c9_remote.png)
+
+SSH into your CoreELEC device (default credentials: username > `root` | password > `coreelec`) and run the following command to create keymapping:
 ```
 cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
 <keymap>
@@ -625,5 +628,3 @@ cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
 </keymap> 
 EOF
 ```
-![alt text](https://raw.githubusercontent.com/ahuacate/jellyfin/master/images/LG_c9_remote.png)
-
