@@ -97,7 +97,7 @@ Use the Jellyfin web interface (192.168.50.111:8096) and go to the Configuration
 | Maximum resume percentage | 90
 | Minimum resume duration | 300
 | **`Playback` > `Streaming`** 
-| Internet streaming bitrate limit (Mbps) | `10` | *Up to you what this value is. But I recommend no more than 30% of your WAN upload speed.*
+| Internet streaming bitrate limit (Mbps) | `10` | *Up to you what this value is. But I recommend no more than 30% of your or your client/guests WAN upload speed.*
 
 And click `Save`.
 
@@ -121,7 +121,7 @@ Coming soon.
 | Advanced | Value | Notes
 | :---  | :---: | :---
 | **`Advanced` > `Networking`**
-| LAN networks | `192.168.50.0/24,192.168.1.0/24` | 
+| LAN networks | `192.168.50.0/24,192.168.1.0/24,192.168.20.0/24` | 
 | Bind to local network address | Leave blank
 | Local http port number | `8096` 
 | Local https port number | `8920`
@@ -586,3 +586,44 @@ apt remove vainfo -y &&
 apt autoremove vainfo -y &&
 apt install vainfo -y
 ```
+
+## 00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED
+When setting the CoreELEC `Settings` > `System` > `Display` > `Resolution` to 3840x2160p your screen may flicker and tear.
+
+The solution is to SSH into your CoreELEC device (default credentials: username > `root` | password > `coreelec`) and perform the following steps:
+
+**Step 1**
+```
+systemctl stop kodi
+```
+
+**Step 2**
+Delete all resolution related sections ( i.e everything between `<resolutions>` and `<resolutions>`) from guisettings.xml
+```
+nano ~/.kodi/userdata/guisettings.xml
+```
+Use "Ctrl K" to delete the selected lines, "CTRL O" to save the file and "CTRL X" to exit.
+
+**Step 3**
+```
+systemctl start kodi
+```
+
+## 00.03 Patch for CoreELEC keymapping to LG C9 magic remote control
+My keymaps are as follows:
+
+```
+cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
+<keymap>
+    <global>
+        <remote>
+            <red>stop</red>
+            <blue>ContextMenu</blue>
+            <yellow>CodecInfo</yellow>
+        </remote>
+    </global>
+</keymap> 
+EOF
+```
+![alt text](https://raw.githubusercontent.com/ahuacate/jellyfin/master/images/LG_c9_remote.png)
+
