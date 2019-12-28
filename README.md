@@ -31,10 +31,13 @@ Tasks to be performed are:
 - [4.00 Edit Jellyfin `Storm` User](#400-edit-jellyfin-storm-user)
 - [5.00 Create Jellyfin Remote Access Users](#500-create-jellyfin-remote-access-users)
 - [6.00 Create Jellyfin Media Player Users](#600-create-jellyfin-media-player-users)
+- [7.00 Install Jellyfin Plugins](#700-install-jellyfin-plugins)
+	- [7.01 Plugin - Kodi Sync Queue](#701-plugin---kodi-sync-queue)
 - [00.00 Patches & Fixes](#0000-patches--fixes)
 	- [00.01 VAAPI Error](#0001-vaapi-error)
 	- [00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC](#0002-patch-for-odroid-n2-coreelec-connected-to-lg-c9-oled---coreelec)
 	- [00.03 Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC](#0003-patch-for-coreelec-keymapping-to-lg-c9-magic-remote-control---coreelec)
+
 
 
 ## 1.00 Setup Jellyfin and perform base configuration
