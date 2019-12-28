@@ -587,6 +587,28 @@ Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > 
 
 And click `Save`.
 
+## 7.00 Install Jellyfin Plugins
+Use the Jellyfin web interface and go to the Configuration Dashboard `Server` > `Advanced` > `Plugins` > `Catalogue` and install the following Plugins:
+
+### 7.01 Plugin - Kodi Sync Queue
+It's recommended to install the Kodi Sync Queue plugin into the Jellyfin server as well. This will help keep your media libraries up to date without waiting for a periodic resync from Kodi.
+
+Install the Jellyfin plugin `Kodi Sync Queue`. Edit plugin `Settings` as follows:
+
+| Settings | Value | Notes
+| :---  | :---: | :---
+| Retention Dayes | `0` |
+| **Items to Track**
+| Movies | `☑`
+| Box Sets | `☑`
+| TV Shows | `☑`
+| Music | `☑`
+| Music Videos | `☑`
+
+And click `Save`.
+
+If you havent already done so install the Jellyfin Kodi Addon onto your Kodi Player device from [HERE](https://jellyfin.org/docs/general/clients/installing-kodi.html).
+
 ---
 
 #  00.00 Patches & Fixes
