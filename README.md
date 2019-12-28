@@ -587,7 +587,7 @@ apt autoremove vainfo -y &&
 apt install vainfo -y
 ```
 
-## 00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED
+## 00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC
 When setting the CoreELEC `Settings` > `System` > `Display` > `Resolution` to 3840x2160p your screen may flicker and tear.
 
 The solution is to SSH into your CoreELEC device (default credentials: username > `root` | password > `coreelec`) and perform the following steps:
@@ -609,8 +609,10 @@ Use "Ctrl K" to delete the selected lines, "CTRL O" to save the file and "CTRL X
 systemctl start kodi
 ```
 
-## 00.03 Patch for CoreELEC keymapping to LG C9 magic remote control
-My keymaps are as follows:
+## 00.03 Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC
+Want to fix your LG magic remote - add those missing keys!
+
+My keymaps fixes are as follows:
 
 ![alt text](https://raw.githubusercontent.com/ahuacate/jellyfin/master/images/LG_c9_remote.png)
 
@@ -628,3 +630,4 @@ cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
 </keymap> 
 EOF
 ```
+And reboot your device for the keymapping to take effect.
