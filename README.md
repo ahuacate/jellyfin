@@ -36,7 +36,9 @@ Tasks to be performed are:
 - [00.00 Patches & Fixes](#0000-patches--fixes)
 	- [00.01 VAAPI Error](#0001-vaapi-error)
 	- [00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC](#0002-patch-for-odroid-n2-coreelec-connected-to-lg-c9-oled---coreelec)
-	- [00.03 Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC](#0003-patch-for-coreelec-keymapping-to-lg-c9-magic-remote-control---coreelec)
+	- [00.03 LG Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC](#0003-lg-patch-for-coreelec-keymapping-to-lg-c9-magic-remote-control---coreelec)
+	- [00.04 LG region change to UK](#0004-lg-region-change-to-uk)
+
 
 
 
@@ -649,7 +651,7 @@ Use "Ctrl K" to delete the selected lines, "CTRL O" to save the file and "CTRL X
 systemctl start kodi
 ```
 
-## 00.03 Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC
+## 00.03 LG Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC
 Want to fix your LG magic remote - add those missing keys!
 
 My keymaps fixes are as follows:
@@ -671,3 +673,19 @@ cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
 EOF
 ```
 And reboot your device for the keymapping to take effect.
+
+## 00.04 LG region change to UK
+For this task I used a Harmony 650 remote control. Configure it to your TV model number.
+
+*  Press 'service menu' button on Harmony remote
+*  Enter password 0413 (other possible password mentioned on some sites is 0000)
+*  Select area option
+*  Note the area that the TV's currently set to, as you'll need it later to return to your country
+*  I wanted UK apps, so entered 3122 for Europe in the top line
+Now exit this phase.
+
+Next Select the country for apps - `Settings` > `general` > `location` > `LG services country` > `UK` (or whichever one)
+
+At that point I opened the LG store app (whatever it's called) and found/downloaded the apps I wanted (iPlayer etc); I think there's some service agreements to agree to etc, but there's no need to re-programme the channels (despite the messaging).
+
+Note you will need a SmartDNS service on your TV Vlan for this to work.
