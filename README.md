@@ -35,11 +35,7 @@ Tasks to be performed are:
 	- [7.01 Plugin - Kodi Sync Queue](#701-plugin---kodi-sync-queue)
 - [00.00 Patches & Fixes](#0000-patches--fixes)
 	- [00.01 VAAPI Error](#0001-vaapi-error)
-	- [00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC](#0002-patch-for-odroid-n2-coreelec-connected-to-lg-c9-oled---coreelec)
-	- [00.03 LG Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC](#0003-lg-patch-for-coreelec-keymapping-to-lg-c9-magic-remote-control---coreelec)
-	- [00.04 LG region change to UK](#0004-lg-region-change-to-uk)
-
-
+	- [00.02 LG region change to UK](#0002-lg-region-change-to-uk)
 
 
 ## 1.00 Setup Jellyfin and perform base configuration
@@ -629,52 +625,7 @@ apt autoremove vainfo -y &&
 apt install vainfo -y
 ```
 
-## 00.02 Patch for Odroid N2 CoreElec connected to LG C9 OLED - CoreELEC
-When setting the CoreELEC `Settings` > `System` > `Display` > `Resolution` to 3840x2160p your screen may flicker and tear.
-
-The solution is to SSH into your CoreELEC device (default credentials: username > `root` | password > `coreelec`) and perform the following steps:
-
-**Step 1**
-```
-systemctl stop kodi
-```
-
-**Step 2**
-Delete all resolution related sections ( i.e everything between `<resolutions>` and `<resolutions>`) from guisettings.xml
-```
-nano ~/.kodi/userdata/guisettings.xml
-```
-Use "Ctrl K" to delete the selected lines, "CTRL O" to save the file and "CTRL X" to exit.
-
-**Step 3**
-```
-systemctl start kodi
-```
-
-## 00.03 LG Patch for CoreELEC keymapping to LG C9 magic remote control - CoreELEC
-Want to fix your LG magic remote - add those missing keys!
-
-My keymaps fixes are as follows:
-
-![alt text](https://raw.githubusercontent.com/ahuacate/jellyfin/master/images/LG_c9_remote.png)
-
-SSH into your CoreELEC device (default credentials: username > `root` | password > `coreelec`) and run the following command to create keymapping:
-```
-cat << EOF > ~/.kodi/userdata/keymaps/remote.xml
-<keymap>
-    <global>
-        <remote>
-            <red>stop</red>
-            <blue>ContextMenu</blue>
-            <yellow>CodecInfo</yellow>
-        </remote>
-    </global>
-</keymap> 
-EOF
-```
-And reboot your device for the keymapping to take effect.
-
-## 00.04 LG region change to UK
+## 00.02 LG region change to UK
 For this task I used a Harmony 650 remote control. Configure it to your TV model number.
 
 *  Press 'service menu' button on Harmony remote
